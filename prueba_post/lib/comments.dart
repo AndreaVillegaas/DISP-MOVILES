@@ -49,17 +49,23 @@ class _CommentsState extends State<Comments> {
     return Scaffold(
         appBar: AppBar(
           title: Text("Comments"),
-          backgroundColor: Colors.purple[300],
+          backgroundColor: Colors.pink[400], 
         ),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Card(
-                margin: EdgeInsets.all(5),
+                margin: EdgeInsets.all(20),
                 color: Colors.white,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
+                     IconButton(
+                          color: Colors.orange,
+                          iconSize: 45,
+                          splashColor: Colors.blue,
+                          icon: Icon(Icons.person),
+                          onPressed: () {},),
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 16.0, right: 20.0, left: 20.0),
@@ -74,10 +80,10 @@ class _CommentsState extends State<Comments> {
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Text(
+                          /*Text(
                             "\n${widget.post.body}",
                             style: TextStyle(color: Colors.black),
-                          ),
+                          ),*/
                         ],
                       ),
                     ),
@@ -89,18 +95,17 @@ class _CommentsState extends State<Comments> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
-                           
-                            Text(
+                            /*Text(
                               "0",
                               style:
                                   TextStyle(color: Colors.black, fontSize: 20),
-                            ),
+                            ),*/
                             
-                            Text(
+                           /* Text(
                               "${_comments.length}",
                               style:
                                   TextStyle(color: Colors.black, fontSize: 20),
-                            ),
+                            ),*/
                            
                           ],
                         ),
@@ -112,27 +117,36 @@ class _CommentsState extends State<Comments> {
               Column(
                 children: <Widget>[
                   Container(
+                   
                     margin: EdgeInsets.all(5),
                     height: MediaQuery.of(context).size.height - 320,
                     child: ListView.builder(
+                       
                         itemCount: _comments.length,
                         itemBuilder: (context, index) {
+                          
                           return Card(
                             color: Colors.white,
                             child: ListTile(
                                 title: Text(
+                                  
                                   _comments[index].name,
                                   style: TextStyle(color: Colors.black),
+                                
                                 ),
-                                subtitle: Text(
+                                
+                                  subtitle: Text(
                                     "${_comments[index].email}\n\n${_comments[index].body}",
                                     style: TextStyle(color: Colors.black)),
                                 isThreeLine: true,
                                 dense: false,
                                ),
+                               
                           );
+                          
                         }),
                   ),
+                  
                 ],
               )
             ],

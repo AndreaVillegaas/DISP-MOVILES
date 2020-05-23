@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'post_detail.dart';
 
 void main() {
   runApp(
     MaterialApp(
       title: "Post_app",
-      home: Home(),
+      home: PostDetail(),
       debugShowCheckedModeBanner: false,
     )
   );
